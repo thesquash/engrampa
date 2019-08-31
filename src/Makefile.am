@@ -223,6 +223,12 @@ if ENABLE_MAGIC
 engrampa_LDADD += $(MAGIC_LIBS)
 endif
 
+if SPLINT_PRESENT
+SPLINT_OPT=+posixlib -preproc -badflag
+splint:
+	$(SPLINT) $(SPLINT_OPT) $(AM_CPPFLAGS) $(engrampa_SOURCES)
+endif
+
 EXTRA_DIST = 				\
 	engrampa.gresource.xml		\
 	fr-marshal.list

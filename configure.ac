@@ -199,6 +199,12 @@ fi
 AM_CONDITIONAL(ENABLE_MAGIC, test x"$enable_magic" != x"no")
 
 dnl ******************************
+dnl * splint
+dnl ******************************
+AC_CHECK_PROGS(SPLINT,splint,no)
+AM_CONDITIONAL(SPLINT_PRESENT,[test x"$SPLINT" != x"no"])
+
+dnl ******************************
 
 YELP_HELP_INIT
 
